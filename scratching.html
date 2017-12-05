@@ -1,0 +1,23 @@
+{{ $.Scratch.Add "a1" 12 }}
+{{ $.Scratch.Get "a1" }} {{/* => 12 */}}
+{{ $.Scratch.Add "a1" 1 }}
+{{ $.Scratch.Get "a1" }} // {{/* => 13 */}}
+
+{{ $.Scratch.Add "a2" "AB" }}
+{{ $.Scratch.Get "a2" }} {{/* => AB */}}
+{{ $.Scratch.Add "a2" "CD" }}
+{{ $.Scratch.Get "a2" }} {{/* => ABCD */}}
+
+{{ $.Scratch.Add "l1" (slice "A" "B") }}
+{{ $.Scratch.Get "l1" }} {{/* => [A B]  */}}
+{{ $.Scratch.Add "l1" (slice "C" "D") }}
+{{ $.Scratch.Get "l1" }} {{/* => [A B C D] */}}
+
+{{ $.Scratch.Set "v1" 123 }}
+{{ $.Scratch.Get "v1" }}  {{/* => 123 */}}
+
+{{ $.Scratch.SetInMap "a3" "b" "XX" }}
+{{ $.Scratch.SetInMap "a3" "a" "AA" }}
+{{ $.Scratch.SetInMap "a3" "c" "CC" }}
+{{ $.Scratch.SetInMap "a3" "b" "BB" }}
+{{ $.Scratch.GetSortedMapValues "a3" }} {{/* => []interface {}{"AA", "BB", "CC"} */}}

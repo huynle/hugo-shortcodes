@@ -1,0 +1,6 @@
+{{ $project_name := .Get "project" }}
+{{ range .Site.AllPages }}
+  {{ if eq .Params.project $project_name }}
+    {{ partial "project_highlight.html" . }}
+  {{ end }}
+{{ end }}

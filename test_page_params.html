@@ -1,0 +1,11 @@
+<!-- Accessing page variables using thiss -->
+<!-- https://gohugo.io/templates/variables/ -->
+
+<ul>
+	<li>Requesting key>value pairs by name: {{ .Get "key1" }}</li>
+	<li>Requesting missing keys: >> {{ with .Get "key2"}} class="{{.}}"{{ end }} <<</li>
+  <li>Requesting Page {{ .Get "key1" }} : {{ .Page.Permalink }}</li>
+	<li>{{ .Get "key1" }} : {{ $.Params.Hugo.Version }}</li>
+  <li>{{ .Get "key1" }} page params: {{ $.Params.metaAlignment }}</li>
+  <li>{{ .Get "key1" }} page params: {{ .Params.date }}</li>
+</ul>

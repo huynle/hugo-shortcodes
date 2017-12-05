@@ -1,0 +1,17 @@
+<!-- example from hugo https://gohugo.io/extras/localfiles/ -->
+
+{{- $pathURL := .Get "pathURL" -}}
+{{- $path := .Get "path" -}}
+{{- $files := readDir $path -}}
+<table>
+    <th>Size in bytes</th>
+    <th>Name</th>
+{{- range $files }}
+    <tr>
+        <td>{{ .Size }}</td>
+        <!-- Really note the context 'dot' here. Where the context in this
+        is to the file variable -->
+        <td><a href="{{ $pathURL }}{{ .Name | relURL }}"> {{ .Name }}</a></td>
+    </tr>
+{{- end }}
+</table>

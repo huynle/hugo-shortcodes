@@ -1,0 +1,6 @@
+<ul>
+  {{ $data := index .Site.Data.nested (.Get "filename") (.Get "key_param") }}
+  {{ range $data }}
+    <li>{{ . | markdownify}}</li>
+  {{ end }}
+</ul>
