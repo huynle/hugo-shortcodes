@@ -1,0 +1,6 @@
+<ul>
+  {{ $data := index .Site.Data (.Get 0) }}
+  {{ range $data.list }}
+    <li>{{ . | markdownify}}</li>
+  {{ end }}
+</ul>

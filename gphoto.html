@@ -1,0 +1,6 @@
+{{ $id := .Get "id" }}
+{{ if $id }}
+<div class="coverimage">
+  <img src="//drive.google.com/uc?export=view&id={{ $id }}"{{ with .Get "alt" }} alt="{{.}}"{{ end }}></img>
+</div>
+{{ end }}

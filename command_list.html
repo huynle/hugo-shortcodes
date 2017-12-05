@@ -1,0 +1,5 @@
+<ul>
+  {{ range $.Site.Data.commands }}
+  <li>{{ partial "fmt_command.html" . }}</li>
+  {{ end }}
+</ul>

@@ -1,0 +1,2 @@
+{{ $data := index .Site.Data.commands (.Get 0) }}
+{{ partial "fmt_command.html" $data }}
